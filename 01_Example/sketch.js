@@ -1,23 +1,41 @@
-//DAT405 / GAD405
-//00_Template
-//The purpose of this sketch is to provide a basic template
-//for P5.js projects
+// Coding Rainbow
+// Daniel Shiffman
+// http://patreon.com/codingtrain
+// Code for: https://youtu.be/0jjeOYMjmDU
 
-//Initialization function
+var angle = 0;
+var slider;
+
 function setup() {
-  //Print a message to the console - to view using Chrome:
-  //View > Developer > Developer Tools > Console
-  console.log("Initialization: OK")
-  createCanvas(500,500);
+  createCanvas(400, 400);
+  slider = createSlider(0, TWO_PI, PI / 4, 0.01);
 }
 
-//Rendering function
 function draw() {
-  //Set a background color
-  background(200, 200, 200);
+  background(51);
+  angle = slider.value();
+  stroke(255);
+  translate(200, height);
+  branch(100);
 
-  //Print a message to the console - to view using Chrome:
-  //View > Developer > Developer Tools > Console
-  console.log("Rendering...")
-  noLoop();
+}
+
+function branch(len) {
+  line(0, 0, 0, -len);
+  translate(0, -len);
+  if (len > 4) {
+    push();
+    rotate(angle);
+    branch(len * 0.67);
+    pop();
+    push();
+    rotate(-angle);
+    branch(len * 0.67);
+    pop();
+  }
+
+  //line(0, 0, 0, -len * 0.67);
+}
+
+  }
 }

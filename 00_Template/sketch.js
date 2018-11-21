@@ -2,7 +2,7 @@
 //00_Template
 //The purpose of this sketch is to provide a basic template
 //for P5.js projects
-
+var x,y;
 //Initialization function
 function setup() {
   //Print a message to the console - to view using Chrome:
@@ -26,7 +26,7 @@ function draw() {
   rect(160, 45, 75, 30);
   rect(250, 75, 15, 15);
 
-  rect(250, 45, 15, 15);
+  rect(x=0,y=0, 15, 15);
   rect(265, 60, 15, 15);
   rect(280, 75, 15, 15);
   rect(295, 90, 15, 45);
